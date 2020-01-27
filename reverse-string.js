@@ -19,16 +19,15 @@ let reverseString = (input) => {
 
     while (left < right) {
         let temp = input[left];
-        input[left] = input[right];
-        input[right] = temp;
-
-        left++;
-        right--;
+        input[left++] = input[right];
+        input[right--] = temp;
     }
 
     return input;
 }
 
-console.dir("hello".split(''));
-let result = reverseString("hello".split(''));
-console.dir(result);
+console.assert(reverseString("hello".split('')).join("") == "olleh", "Reverse for 'hello' failed.");
+console.assert(reverseString("Hannah".split('')).join("") === "hannaH", "Reverse for 'Hannah' failed.");
+console.assert(reverseString("Artem".split('')).join("") === "metrA", "Reverse for 'Artem' failed.");
+
+
